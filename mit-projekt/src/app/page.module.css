@@ -1,0 +1,519 @@
+.page {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  color: #f7f7fb;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 72px;
+}
+
+.orbA,
+.orbB,
+.gridGlow {
+  position: absolute;
+  pointer-events: none;
+}
+
+.orbA {
+  top: 48px;
+  left: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 212, 96, 0.22), transparent 68%);
+  filter: blur(10px);
+}
+
+.orbB {
+  right: -100px;
+  top: 220px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(83, 187, 255, 0.18), transparent 68%);
+  filter: blur(12px);
+}
+
+.gridGlow {
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 90%);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 28px;
+  align-items: center;
+  padding: 28px 0 44px;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoWrap {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.kicker,
+.sectionLabel,
+.subkicker {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.kicker,
+.sectionLabel {
+  font-size: 0.74rem;
+  color: #ffd166;
+}
+
+.subkicker {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  color: rgba(247, 247, 251, 0.72);
+}
+
+.title {
+  max-width: 12ch;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 62ch;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.8;
+  color: rgba(240, 244, 255, 0.76);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.primaryCta,
+.secondaryCta,
+.inlineLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.primaryCta {
+  background: linear-gradient(135deg, #ffd166 0%, #ff8a5b 100%);
+  color: #10131d;
+  box-shadow: 0 18px 36px rgba(255, 138, 91, 0.24);
+}
+
+.secondaryCta,
+.inlineLink {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f7f7fb;
+  backdrop-filter: blur(10px);
+}
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.statCard,
+.highlightCard,
+.profileCard,
+.streamSection,
+.embedShell {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  border-radius: 22px;
+}
+
+.statCard strong {
+  font-size: 1.4rem;
+  letter-spacing: -0.05em;
+}
+
+.statCard span,
+.profileText,
+.highlightCard p,
+.streamCopy p {
+  color: rgba(240, 244, 255, 0.74);
+}
+
+.heroVisual {
+  display: grid;
+  gap: 18px;
+}
+
+.bannerFrame {
+  position: relative;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.08), rgba(83, 187, 255, 0.08));
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.bannerImage {
+  object-fit: cover;
+}
+
+.profileCard {
+  display: grid;
+  grid-template-columns: minmax(0, 160px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 30px;
+}
+
+.profileImageWrap {
+  position: relative;
+  min-height: 180px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.profileImage {
+  object-fit: cover;
+}
+
+.profileMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profileName {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.highlightsSection,
+.youtubeSection,
+.streamSection {
+  margin-top: 30px;
+}
+
+.sectionHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.sectionHeading h2 {
+  max-width: 16ch;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.highlightGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.highlightCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 190px;
+  padding: 20px;
+  border-radius: 28px;
+}
+
+.highlightCard h3 {
+  font-size: 1.1rem;
+}
+
+.youtubeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 30px;
+  padding: 22px;
+  border-radius: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+
+.youtubeMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.youtubeMeta p {
+  max-width: 60ch;
+  color: rgba(240, 244, 255, 0.76);
+  line-height: 1.7;
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.videoCard {
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(5, 8, 15, 0.55);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.videoThumbLink {
+  display: block;
+}
+
+.videoThumbWrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.22), rgba(83, 187, 255, 0.18));
+}
+
+.videoThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.videoThumbFallback {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255, 209, 102, 0.5), transparent 32%),
+    radial-gradient(circle at 75% 35%, rgba(83, 187, 255, 0.48), transparent 28%),
+    linear-gradient(135deg, rgba(9, 17, 31, 0.9), rgba(30, 38, 64, 0.9));
+}
+
+.videoCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+}
+
+.videoCopy h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.videoTag {
+  color: #ffd166;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.videoEmptyState {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.videoEmptyState p {
+  color: rgba(240, 244, 255, 0.76);
+}
+
+.streamSection {
+  padding: 22px;
+  border-radius: 34px;
+}
+
+.streamLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.streamCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 2px 0;
+}
+
+.embedShell {
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.embed {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .primaryCta:hover,
+  .secondaryCta:hover,
+  .inlineLink:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+  }
+
+  .primaryCta:hover {
+    filter: brightness(1.03);
+  }
+
+  .secondaryCta:hover,
+  .inlineLink:hover {
+    border-color: rgba(255, 209, 102, 0.28);
+    background: rgba(255, 255, 255, 0.07);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .streamLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    max-width: 14ch;
+  }
+
+  .highlightGrid,
+  .videoGrid,
+  .statsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard {
+    grid-template-columns: 1fr;
+  }
+
+  .profileImageWrap {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    width: min(100% - 20px, 1180px);
+    padding: 18px 0 44px;
+  }
+
+  .hero {
+    padding-top: 12px;
+  }
+
+  .brandRow {
+    align-items: flex-start;
+  }
+
+  .logoWrap {
+    width: 64px;
+    height: 64px;
+  }
+
+  .logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .kicker,
+  .sectionLabel {
+    font-size: 0.68rem;
+  }
+
+  .subkicker {
+    letter-spacing: 0.12em;
+  }
+
+  .title {
+    font-size: clamp(2.35rem, 15vw, 3.8rem);
+  }
+
+  .lead {
+    line-height: 1.7;
+  }
+
+  .streamSection,
+  .youtubeSection,
+  .highlightCard,
+  .profileCard,
+  .statCard {
+    border-radius: 22px;
+  }
+}

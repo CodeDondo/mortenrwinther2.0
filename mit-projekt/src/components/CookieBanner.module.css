@@ -1,0 +1,122 @@
+.banner {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: min(1180px, calc(100% - 40px));
+  background: rgba(3, 6, 12, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.copy {
+  max-width: 76ch;
+}
+
+.title {
+  color: #ffd166;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.desc {
+  color: rgba(240, 244, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.primary {
+  background: linear-gradient(135deg, #ffd166 0%, #ff8a5b 100%);
+  color: #10131d;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.ghost {
+  background: rgba(255, 255, 255, 0.04);
+  color: #f7f7fb;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+
+.manage {
+  position: absolute;
+  right: 12px;
+  top: -42px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f7f7fb;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px 12px;
+  border-radius: 14px;
+}
+
+.pill {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 60;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f7f7fb;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 70;
+}
+
+.modalInner {
+  width: min(900px, calc(100% - 40px));
+  background: rgba(6, 9, 15, 0.98);
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.modalActions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.link {
+  background: transparent;
+  color: #ffd166;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.close {
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f7f7fb;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 12px;
+  border-radius: 8px;
+}

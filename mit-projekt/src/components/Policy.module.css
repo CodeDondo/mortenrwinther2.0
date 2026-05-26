@@ -1,0 +1,85 @@
+.page {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+  color: #f7f7fb;
+}
+
+.card {
+  padding: 36px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 10px 40px rgba(3,6,12,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+  color: #ffd166;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.card h1 {
+  max-width: 28ch;
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  line-height: 1.02;
+  margin: 6px 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  max-width: 70ch;
+  margin-top: 10px;
+  color: rgba(240, 244, 255, 0.86);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.card h2 {
+  margin-top: 20px;
+  font-size: 1.15rem;
+  color: #ffffff;
+  border-left: 3px solid rgba(255, 209, 102, 0.9);
+  padding-left: 12px;
+  margin-left: -12px;
+}
+
+ .card ul {
+  margin-top: 12px;
+  padding-left: 20px;
+  color: rgba(240,244,255,0.9);
+}
+
+.card li {
+  margin-top: 10px;
+  position: relative;
+}
+
+.card li::marker {
+  color: #ffd166;
+}
+
+.callout {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(255,209,102,0.06), rgba(83,187,255,0.03));
+  border: 1px solid rgba(255,209,102,0.12);
+  color: rgba(16,19,29,0.95);
+}
+
+.note {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: rgba(240,244,255,0.78);
+}
+
+@media (max-width: 800px) {
+  .page { padding: 28px 0 44px; }
+  .card { padding: 22px; border-radius: 14px; }
+  .card h1 { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+}

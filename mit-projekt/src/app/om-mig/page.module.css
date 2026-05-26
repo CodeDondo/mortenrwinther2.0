@@ -1,0 +1,205 @@
+.page {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 72px;
+  color: #f7f7fb;
+}
+
+.hero,
+.partnerSection,
+.friendSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.hero {
+  padding: 22px 0 28px;
+}
+
+.heroCopy,
+.storyCard,
+.partnerCopy,
+.partnerCard,
+.friendCopy,
+.friendCard {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(16px);
+}
+
+.heroCopy,
+.partnerCopy,
+.friendCopy,
+.storyCard {
+  border-radius: 30px;
+}
+
+.heroCopy,
+.partnerCopy,
+.friendCopy {
+  padding: 28px;
+}
+
+.kicker,
+.sectionLabel {
+  color: #ffd166;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+}
+
+.heroCopy h1 {
+  margin-top: 10px;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.lead,
+.storyCard p,
+.partnerCopy p,
+.friendCopy p {
+  margin-top: 16px;
+  color: rgba(240, 244, 255, 0.76);
+  line-height: 1.8;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.metaCard {
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.metaCard span {
+  display: block;
+  color: rgba(240, 244, 255, 0.6);
+  font-size: 0.78rem;
+  margin-bottom: 6px;
+}
+
+.metaCard strong {
+  font-size: 0.98rem;
+}
+
+.heroImageWrap,
+.partnerCard,
+.friendCard {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  border-radius: 30px;
+}
+
+.heroImage,
+.partnerImage,
+.friendImage {
+  object-fit: contain;
+  object-position: center;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.storyCard {
+  padding: 22px;
+}
+
+.friendSection {
+  margin-top: 20px;
+}
+
+.partnerSection {
+  margin-top: 18px;
+}
+
+.friendCopy h2 {
+  margin-top: 10px;
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.partnerCopy h2 {
+  margin-top: 10px;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.partnerButton,
+.friendButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffd166 0%, #ff8a5b 100%);
+  color: #10131d;
+  font-weight: 800;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .partnerButton:hover,
+  .friendButton:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 18px 36px rgba(255, 138, 91, 0.24);
+    filter: brightness(1.03);
+  }
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .partnerSection,
+  .friendSection,
+  .storyGrid,
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroImageWrap,
+  .partnerCard,
+  .friendCard {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    width: min(100% - 20px, 1180px);
+    padding: 20px 0 44px;
+  }
+
+  .heroCopy,
+  .partnerCopy,
+  .friendCopy,
+  .storyCard {
+    border-radius: 22px;
+  }
+
+  .heroCopy,
+  .partnerCopy,
+  .friendCopy {
+    padding: 22px;
+  }
+}

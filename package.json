@@ -1,0 +1,10 @@
+{
+  "name": "mortenrwinther2-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix mit-projekt run dev",
+    "build": "npm --prefix mit-projekt run build",
+    "lint": "npm --prefix mit-projekt run lint",
+    "start": "npm --prefix mit-projekt run start"
+  }
+}
