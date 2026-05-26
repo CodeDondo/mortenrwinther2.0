@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { headers } from "next/headers";
 import styles from "./page.module.css";
 import AutoRefresh from "./auto-refresh";
 
@@ -149,23 +148,21 @@ async function fetchLatestYouTubeVideos() {
 }
 
 function getTwitchParentHosts() {
-  const headerList = headers();
-  const hostHeader = headerList.get("x-forwarded-host") || headerList.get("host") || "mortenrwinther.dk";
-  const host = hostHeader.split(",")[0].trim();
-  const hostname = host.split(":")[0];
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mortenrwinther.dk";
 
-  const hosts = new Set([hostname]);
+  try {
+    const hostname = new URL(siteUrl).hostname;
+    const hosts = new Set([
+      hostname,
+      hostname.startsWith("www.") ? hostname.slice(4) : `www.${hostname}`,
+      "localhost",
+      "127.0.0.1",
+    ]);
 
-  if (hostname.startsWith("www.")) {
-    hosts.add(hostname.slice(4));
-  } else {
-    hosts.add(`www.${hostname}`);
+    return Array.from(hosts);
+  } catch {
+    return ["mortenrwinther.dk", "www.mortenrwinther.dk", "localhost", "127.0.0.1"];
   }
-
-  hosts.add("localhost");
-  hosts.add("127.0.0.1");
-
-  return Array.from(hosts);
 }
 
 export default async function Home() {
