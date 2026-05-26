@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { headers } from "next/headers";
 import styles from "./page.module.css";
 import AutoRefresh from "./auto-refresh";
 
@@ -147,8 +148,32 @@ async function fetchLatestYouTubeVideos() {
   return parseLatestVideos(html);
 }
 
+function getTwitchParentHosts() {
+  const headerList = headers();
+  const hostHeader = headerList.get("x-forwarded-host") || headerList.get("host") || "mortenrwinther.dk";
+  const host = hostHeader.split(",")[0].trim();
+  const hostname = host.split(":")[0];
+
+  const hosts = new Set([hostname]);
+
+  if (hostname.startsWith("www.")) {
+    hosts.add(hostname.slice(4));
+  } else {
+    hosts.add(`www.${hostname}`);
+  }
+
+  hosts.add("localhost");
+  hosts.add("127.0.0.1");
+
+  return Array.from(hosts);
+}
+
 export default async function Home() {
   const latestVideos = await fetchLatestYouTubeVideos().catch(() => []);
+  const twitchParents = getTwitchParentHosts();
+  const twitchEmbedSrc = `https://player.twitch.tv/?channel=mortenrwinther${twitchParents
+    .map((parent) => `&parent=${encodeURIComponent(parent)}`)
+    .join("")}`;
 
   return (
     <div className={styles.page}>
@@ -329,7 +354,7 @@ export default async function Home() {
             <div className={styles.embedShell}>
               <iframe
                 title="Twitch livestream fra Morten Winther"
-                src="https://player.twitch.tv/?channel=mortenrwinther&parent=localhost&parent=127.0.0.1&parent=mortenrwinther.dk"
+                src={twitchEmbedSrc}
                 allowFullScreen
                 scrolling="no"
                 loading="lazy"
