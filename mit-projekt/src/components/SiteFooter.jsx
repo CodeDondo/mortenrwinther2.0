@@ -100,7 +100,7 @@ export default function SiteFooter() {
             </p>
             <div className={styles.discordFrame}>
               <iframe
-                src="https://discord.com/widget?id=1490642776466133072&theme=dark"
+                src="https://discord.com/widget?id=1425637564622176298&theme=dark"
                 frameBorder="0"
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                 title="Discord server widget"
@@ -110,7 +110,7 @@ export default function SiteFooter() {
             </div>
             <a
               className={styles.discordButton}
-              href="https://discord.com/widget?id=1490642776466133072&theme=dark"
+              href="https://discord.com/widget?id=1425637564622176298&theme=dark"
               target="_blank"
               rel="noreferrer"
             >

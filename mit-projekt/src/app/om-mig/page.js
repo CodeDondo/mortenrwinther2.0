@@ -33,7 +33,7 @@ export default function AboutPage() {
           <div className={styles.metaGrid}>
             <article className={styles.metaCard}>
               <span>Født</span>
-              <strong>1. januar 1996</strong>
+              <strong>18. januar 1996</strong>
             </article>
             <article className={styles.metaCard}>
               <span>Base</span>
