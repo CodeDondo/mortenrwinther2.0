@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
-const birthDate = new Date(1996, 0, 1);
+const birthDate = new Date(1996, 0, 18); // 18. januar 1996 (måneder er 0-indekserede)
 
 function calculateAge(referenceDate = new Date()) {
   let age = referenceDate.getFullYear() - birthDate.getFullYear();
