@@ -8,6 +8,7 @@ import styles from "./SiteNav.module.css";
 
 const navItems = [
   { label: "Forside", href: "/" },
+  { label: "Northway GO", href: "/northway-go" },
   { label: "Mediepakker", href: "/mediepakker" },
   { label: "Setup", href: "/setup" },
   { label: "Vods", href: "/vods" },

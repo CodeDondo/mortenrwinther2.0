@@ -1,0 +1,210 @@
+.page {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 72px;
+  color: #f7f7fb;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.eyebrow,
+.cardLabel,
+.metaLabel {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  color: #ffd166;
+}
+
+.copy h1 {
+  max-width: 13ch;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
+}
+
+.lead,
+.logoMeta p,
+.panelAccent p,
+.list {
+  color: rgba(240, 244, 255, 0.76);
+  line-height: 1.8;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.primaryCta,
+.secondaryCta,
+.inlineCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+}
+
+.primaryCta {
+  background: linear-gradient(135deg, #ffd166 0%, #ff8a5b 100%);
+  color: #10131d;
+  box-shadow: 0 18px 36px rgba(255, 138, 91, 0.24);
+}
+
+.secondaryCta,
+.inlineCta {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f7f7fb;
+  backdrop-filter: blur(10px);
+}
+
+.logoCard,
+.infoCard,
+.panel,
+.panelAccent {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+
+.logoCard {
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.logoWrap {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 209, 102, 0.1), rgba(83, 187, 255, 0.08));
+}
+
+.logo {
+  object-fit: contain;
+  padding: 18px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.infoCard {
+  padding: 18px;
+  border-radius: 22px;
+}
+
+.infoCard strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.08rem;
+  letter-spacing: -0.03em;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.panel,
+.panelAccent {
+  padding: 24px;
+  border-radius: 28px;
+}
+
+.panel h2,
+.panelAccent h2 {
+  margin-top: 10px;
+  font-size: clamp(1.5rem, 2.7vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+}
+
+.list {
+  margin-top: 16px;
+  padding-left: 18px;
+}
+
+.list li + li {
+  margin-top: 10px;
+}
+
+.panelAccent {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: linear-gradient(180deg, rgba(255, 209, 102, 0.08), rgba(255, 255, 255, 0.04));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .primaryCta:hover,
+  .secondaryCta:hover,
+  .inlineCta:hover {
+    transform: translateY(-2px) scale(1.01);
+    filter: brightness(1.03);
+  }
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .logoWrap {
+    min-height: 260px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    width: min(100% - 20px, 1180px);
+    padding: 24px 0 44px;
+  }
+
+  .panel,
+  .panelAccent,
+  .logoCard {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .copy h1 {
+    max-width: 100%;
+  }
+}
