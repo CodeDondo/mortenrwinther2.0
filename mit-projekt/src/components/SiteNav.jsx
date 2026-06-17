@@ -7,6 +7,8 @@ import { useState } from "react";
 import styles from "./SiteNav.module.css";
 
 const navItems = [
+  { label: "Forside", href: "/" },
+  { label: "Mediepakker", href: "/mediepakker" },
   { label: "Setup", href: "/setup" },
   { label: "Vods", href: "/vods" },
   { label: "Om mig", href: "/om-mig" },
