@@ -18,9 +18,12 @@ const details = [
 ];
 
 export const metadata = {
-  title: "Northway GO",
+  title: "Northway GO | Pokémon GO gruppe i Aalborg",
   description:
     "Northway GO er en Pokémon GO gruppe med base i Aalborg omegn, hvor der arrangeres meetups, raids, events og byttedage i Campfire.",
+  alternates: {
+    canonical: "/northway-go",
+  },
 };
 
 export default function NorthwayGoPage() {

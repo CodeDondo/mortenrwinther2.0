@@ -1,5 +1,14 @@
 import styles from "../../components/Policy.module.css";
 
+export const metadata = {
+  title: "Privatlivspolitik | Morten Winther",
+  description:
+    "Læs privatlivspolitikken for mortenrwinther.dk og forstå hvordan personoplysninger behandles.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <main className={styles.page}>

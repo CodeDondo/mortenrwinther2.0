@@ -113,3 +113,12 @@ export default function SetupPage() {
     </main>
   );
 }
+
+export const metadata = {
+  title: "Setup | Morten Winther",
+  description:
+    "Se Morten Winthers aktuelle setup til streaming, content creation, udvikling og gaming med gear og workflow.",
+  alternates: {
+    canonical: "/setup",
+  },
+};

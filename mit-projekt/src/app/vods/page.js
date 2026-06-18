@@ -16,3 +16,12 @@ export default function VodsPage() {
     />
   );
 }
+
+export const metadata = {
+  title: "Vods | Morten Winther",
+  description:
+    "Find videoer, highlights og uploads fra Morten Winther med TCG, Pokémon content, tech, fitness og live moments.",
+  alternates: {
+    canonical: "/vods",
+  },
+};

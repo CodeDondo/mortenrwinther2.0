@@ -44,6 +44,9 @@ export const metadata = {
   title: "Mediepakker | Morten Winther",
   description:
     "Se Morten Winthers mediepakker, samarbejdsmuligheder og relevante brancher at kontakte for Pokémon, TCG, vlogging og creator content.",
+  alternates: {
+    canonical: "/mediepakker",
+  },
 };
 
 export default function MediepakkerPage() {

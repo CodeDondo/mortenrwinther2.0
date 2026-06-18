@@ -1,5 +1,14 @@
 import SectionPage from "../../components/SectionPage";
 
+export const metadata = {
+  title: "Kontakt | Morten Winther",
+  description:
+    "Kontakt Morten Winther om sponsorater, collabs, events eller creator content med Pokémon, TCG, tech og fitness.",
+  alternates: {
+    canonical: "/kontakt",
+  },
+};
+
 export default function ContactPage() {
   return (
     <SectionPage

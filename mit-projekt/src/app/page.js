@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 import AutoRefresh from "./auto-refresh";
 
@@ -26,6 +27,41 @@ const stats = [
   { value: "GO", label: "mobile adventures" },
   { value: "LIVE", label: "stream moments" },
 ];
+
+const featuredPages = [
+  {
+    title: "Northway GO",
+    href: "/northway-go",
+    text: "Lokal Pokémon GO-gruppe med raids, events og fællesskab i Aalborg og omegn.",
+  },
+  {
+    title: "Mediepakker",
+    href: "/mediepakker",
+    text: "Samarbejdsmuligheder til brands, der vil ramme Pokémon, TCG og creator-content.",
+  },
+  {
+    title: "Om mig",
+    href: "/om-mig",
+    text: "Baggrunden, focus og brandet bag Morten Winther og hans content-univers.",
+  },
+  {
+    title: "Setup",
+    href: "/setup",
+    text: "Mit aktuelle streaming- og content-setup med gear, laptop og workflow.",
+  },
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Vigtige undersider på mortenrwinther.dk",
+  itemListElement: featuredPages.map((page, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: page.title,
+    url: `https://www.mortenrwinther.dk${page.href}`,
+  })),
+};
 
 function decodeHtmlEntities(value) {
   return value
@@ -270,6 +306,25 @@ export default async function Home() {
           </div>
         </section>
 
+        <section className={styles.routesSection}>
+          <div className={styles.sectionHeading}>
+            <p className={styles.sectionLabel}>Undersider</p>
+            <h2>De vigtigste sider samlet ét sted for både brugere og søgemaskiner.</h2>
+          </div>
+
+          <div className={styles.routeGrid}>
+            {featuredPages.map((page) => (
+              <article key={page.href} className={styles.routeCard}>
+                <h3>{page.title}</h3>
+                <p>{page.text}</p>
+                <Link className={styles.routeLink} href={page.href}>
+                  Læs mere
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className={styles.youtubeSection}>
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>YouTube</p>
@@ -360,6 +415,8 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
       </main>
     </div>
   );

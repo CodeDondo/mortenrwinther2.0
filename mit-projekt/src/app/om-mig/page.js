@@ -142,3 +142,12 @@ export default function AboutPage() {
     </main>
   );
 }
+
+export const metadata = {
+  title: "Om mig | Morten Winther",
+  description:
+    "Læs om Morten Winther, hans baggrund i Pokémon, TCG, content creation, webudvikling og community arbejde.",
+  alternates: {
+    canonical: "/om-mig",
+  },
+};

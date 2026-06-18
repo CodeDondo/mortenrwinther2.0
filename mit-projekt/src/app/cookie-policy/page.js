@@ -1,5 +1,14 @@
 import styles from "../../components/Policy.module.css";
 
+export const metadata = {
+  title: "Cookiepolitik | Morten Winther",
+  description:
+    "Læs cookiepolitikken for mortenrwinther.dk og se hvordan cookies og tracking bruges på sitet.",
+  alternates: {
+    canonical: "/cookie-policy",
+  },
+};
+
 export default function CookiePolicyPage() {
   return (
     <main className={styles.page}>

@@ -3,6 +3,26 @@ import styles from "./SiteFooter.module.css";
 
 const footerLinks = [
   {
+    label: "Forside",
+    value: "mortenrwinther.dk",
+    href: "/",
+  },
+  {
+    label: "Northway GO",
+    value: "Pokémon GO gruppe i Aalborg",
+    href: "/northway-go",
+  },
+  {
+    label: "Mediepakker",
+    value: "Samarbejder og sponsorater",
+    href: "/mediepakker",
+  },
+  {
+    label: "Om mig",
+    value: "Morten Winther",
+    href: "/om-mig",
+  },
+  {
     label: "Cookiepolitik",
     value: "Cookiepolitik",
     href: "/cookie-policy",
@@ -77,6 +97,7 @@ export default function SiteFooter() {
               Perfekt til samarbejder inden for TCG, gaming, Pokémon, tech, fitness og content der rammer en engageret
               community på tværs af YouTube, Twitch og Instagram.
             </p>
+            <p className={styles.cardLabel}>Undersider</p>
             <div className={styles.linkRow}>
               {footerLinks.map((link) => (
                 <a

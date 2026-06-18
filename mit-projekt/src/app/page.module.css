@@ -250,6 +250,7 @@
 }
 
 .highlightsSection,
+.routesSection,
 .youtubeSection,
 .streamSection {
   margin-top: 30px;
@@ -287,6 +288,45 @@
 
 .highlightCard h3 {
   font-size: 1.1rem;
+}
+
+.routesSection {
+  margin-top: 30px;
+}
+
+.routeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.routeCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 210px;
+  padding: 20px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+
+.routeCard h3 {
+  font-size: 1.08rem;
+}
+
+.routeCard p {
+  flex: 1;
+  color: rgba(240, 244, 255, 0.76);
+  line-height: 1.7;
+}
+
+.routeLink {
+  align-self: flex-start;
+  color: #ffd166;
+  font-weight: 800;
 }
 
 .youtubeSection {
@@ -454,6 +494,7 @@
   }
 
   .highlightGrid,
+  .routeGrid,
   .videoGrid,
   .statsRow {
     grid-template-columns: 1fr;
@@ -512,6 +553,7 @@
   .streamSection,
   .youtubeSection,
   .highlightCard,
+  .routeCard,
   .profileCard,
   .statCard {
     border-radius: 22px;
