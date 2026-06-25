@@ -389,7 +389,7 @@ export default async function Home() {
           <div className={styles.streamLayout}>
             <div className={styles.streamCopy}>
               <p>
-                Her kan du trække folk direkte ind i din kanal, så de kan hoppe fra landingpage til stream med ét klik.
+                Her kan du besøge min kanal, du kan hoppe fra landingpage til stream med ét klik.
                 Perfekt til live openings, Pokémon GO sessions og samlerchats.
               </p>
 
