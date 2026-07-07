@@ -114,7 +114,7 @@ function parseLatestVideos(html) {
   const videos = [];
   const seen = new Set();
 
-  const itemPattern = /"contentId":"([^"]+)"[\s\S]{0,1200}?"accessibilityContext":\{"label":"([^"]+)"/g;
+  const itemPattern = /"videoId":"([^"]+)"[\s\S]{0,5000}?"lockupMetadataViewModel":\{"title":\{"content":"([^"]+)"/g;
 
   for (const match of html.matchAll(itemPattern)) {
     const videoId = match[1];
