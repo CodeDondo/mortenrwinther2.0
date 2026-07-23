@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
 
         <h2>Dine rettigheder</h2>
         <p>Du har ret til indsigt, berigtigelse, sletning, begrænsning, indsigelse og dataportabilitet. Send en anmodning
-        til kontakt@mail eller den angivne email for at gøre brug af dine rettigheder.</p>
+        til kontakt@mortenrwinther.dk eller den angivne email for at gøre brug af dine rettigheder.</p>
 
         <h2>Kontakt</h2>
         <p>Kontakt: kontakt@mortenrwinther.dk</p>

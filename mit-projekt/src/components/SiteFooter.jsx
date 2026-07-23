@@ -33,6 +33,11 @@ const footerLinks = [
     href: "/privacy-policy",
   },
   {
+    label: "Handelsbetingelser",
+    value: "Køb, betaling og fortrydelse",
+    href: "/handelsbetingelser",
+  },
+  {
     label: "Email",
     value: "kontakt@mortenrwinther.dk",
     href: "mailto:kontakt@mortenrwinther.dk?subject=Samarbejde%20med%20Morten%20Winther",
@@ -97,6 +102,7 @@ export default function SiteFooter() {
               Perfekt til samarbejder inden for TCG, gaming, Pokémon, tech, fitness og content der rammer en engageret
               community på tværs af YouTube, Twitch og Instagram.
             </p>
+            <p className={styles.cardText}>CVR 44231662 · Handelsbetingelser og øvrige oplysninger findes i footerens links.</p>
             <p className={styles.cardLabel}>Undersider</p>
             <div className={styles.linkRow}>
               {footerLinks.map((link) => (
@@ -141,7 +147,7 @@ export default function SiteFooter() {
         </div>
 
         <div className={styles.bottomRow}>
-          <p>mortenrwinther.dk</p>
+          <p>mortenrwinther.dk · CVR 44231662</p>
           <p>Pokémon-inspireret creator platform med fokus på samlerkultur, community og live content.</p>
         </div>
       </div>

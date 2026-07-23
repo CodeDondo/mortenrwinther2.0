@@ -69,7 +69,36 @@
   border-radius: 12px;
   background: linear-gradient(90deg, rgba(255,209,102,0.06), rgba(83,187,255,0.03));
   border: 1px solid rgba(255,209,102,0.12);
-  color: rgba(16,19,29,0.95);
+  color: #ffffff;
+}
+
+.mailLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 0.18em;
+  transition:
+    transform 160ms ease,
+    color 160ms ease,
+    text-decoration-color 160ms ease,
+    filter 160ms ease;
+}
+
+.mailLink:hover {
+  color: #ffd166;
+  text-decoration-color: rgba(255, 209, 102, 0.9);
+  transform: translateY(-1px);
+  filter: drop-shadow(0 8px 14px rgba(255, 209, 102, 0.18));
+}
+
+.mailLink:focus-visible {
+  outline: 2px solid rgba(255, 209, 102, 0.95);
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 .note {

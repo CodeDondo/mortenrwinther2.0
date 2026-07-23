@@ -5,19 +5,19 @@ const mediaPackages = [
   {
     title: "YouTube Short",
     span: "15-60 sek sponsor",
-    price: "150-300 kr",
+    price: "150-300 kr ekskl. moms",
     detail: "Perfekt til quick hits, produkt teasers og kampagner med lav friktion.",
   },
   {
     title: "Integreret sponsor",
     span: "Vlog eller stream-segment",
-    price: "300-500 kr",
+    price: "300-500 kr ekskl. moms",
     detail: "Indlejret naturligt i content, hvor brandet bliver en del af historien.",
   },
   {
     title: "Dedikeret video",
     span: "Fuld fokus på produktet",
-    price: "500-1.000 kr",
+    price: "500-1.000 kr ekskl. moms",
     detail: "Størst rum til demo, unboxing, test og call to action med mere dybde.",
   },
 ];
@@ -79,6 +79,7 @@ export default function MediepakkerPage() {
           <p className={styles.asideText}>
             Jeg leder primært efter samarbejder med brands, der passer ind i Pokémon, TCG, tech og creator-udstyr.
           </p>
+          <p className={styles.asideText}>Alle priser er ekskl. moms, og CVR-nummeret er 44231662.</p>
         </aside>
       </section>
 
