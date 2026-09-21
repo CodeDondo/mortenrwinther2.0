@@ -34,7 +34,7 @@
 .partnerCopy,
 .friendCopy,
 .storyCard {
-  border-radius: 30px;
+  border-radius: 36px;
 }
 
 .heroCopy,
@@ -98,7 +98,7 @@
   position: relative;
   overflow: hidden;
   min-height: 380px;
-  border-radius: 30px;
+  border-radius: 40px;
 }
 
 .heroImage,
@@ -106,6 +106,7 @@
 .friendImage {
   object-fit: contain;
   object-position: center;
+  border-radius: 28px;
 }
 
 .storyGrid {
@@ -194,7 +195,7 @@
   .partnerCopy,
   .friendCopy,
   .storyCard {
-    border-radius: 22px;
+    border-radius: 28px;
   }
 
   .heroCopy,

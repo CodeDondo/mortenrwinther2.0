@@ -9,45 +9,40 @@ const youtubeThumbnailBaseUrl = "https://i.ytimg.com/vi";
 
 const highlights = [
   {
-    title: "TCG collector vibes",
-    text: "Rare pulls, binders, opening reactions og et kurateret univers for samlere.",
+    title: "Video strategy",
+    text: "Content der kombinerer klare mål, stærk storytelling og en naturlig brand-tilstedeværelse.",
   },
   {
-    title: "Pokémon GO energi",
-    text: "Raids, event days og den slags content der holder feedet levende på farten.",
+    title: "Creator-led storytelling",
+    text: "Personlig, troværdig kommunikation, der skaber engagement på tværs af YouTube, Twitch og sociale medier.",
   },
   {
-    title: "Live fra Twitch",
-    text: "Community, gameplay og live drops direkte fra din kanal, når der sker noget.",
+    title: "Live community building",
+    text: "Fællesskab, real-time engagement og brand-safe indhold i et professionelt creator-univers.",
   },
 ];
 
 const stats = [
-  { value: "TCG", label: "collector content" },
-  { value: "GO", label: "mobile adventures" },
+  { value: "YT", label: "video content" },
   { value: "LIVE", label: "stream moments" },
+  { value: "BRAND", label: "creator partnerships" },
 ];
 
 const featuredPages = [
   {
-    title: "Northway GO",
-    href: "/northway-go",
-    text: "Lokal Pokémon GO-gruppe med raids, events og fællesskab i Aalborg og omegn.",
-  },
-  {
-    title: "Mediepakker",
-    href: "/mediepakker",
-    text: "Samarbejdsmuligheder til brands, der vil ramme Pokémon, TCG og creator-content.",
-  },
-  {
     title: "Om mig",
     href: "/om-mig",
-    text: "Baggrunden, focus og brandet bag Morten Winther og hans content-univers.",
+    text: "Baggrunden, fokus og brandet bag Morten Winther som content creator og samarbejdspartner.",
   },
   {
     title: "Setup",
     href: "/setup",
-    text: "Mit aktuelle streaming- og content-setup med gear, laptop og workflow.",
+    text: "Mit streaming- og content-setup, der understøtter kvalitet, effektivitet og professionel levering.",
+  },
+  {
+    title: "Kontakt",
+    href: "/kontakt",
+    text: "Lad os diskutere samarbejder, kampagner, events og indhold, der skaber værdi for dit brand.",
   },
 ];
 
@@ -220,7 +215,7 @@ export default async function Home() {
             <div className={styles.brandRow}>
               <div className={styles.logoWrap}>
                 <Image
-                  src="/logo.png"
+                  src="/MRWLogo.png"
                   alt="Morten Winther logo"
                   width={96}
                   height={96}
@@ -230,15 +225,15 @@ export default async function Home() {
               </div>
               <div>
                 <p className={styles.kicker}>mortenrwinther.dk</p>
-                <p className={styles.subkicker}>Pokémon-inspireret TCG collector og Pokémon GO creator</p>
+                <p className={styles.subkicker}>Content creator med fokus på video, storytelling og live brand engagement</p>
               </div>
             </div>
 
-            <h1 className={styles.title}>Et univers bygget til pulls, raids og live community moments.</h1>
+            <h1 className={styles.title}>Professionel content creation med fokus på video, brand og community.</h1>
 
             <p className={styles.lead}>
-              En landingpage til din verden omkring card openings, collector stories og Pokémon GO content,
-              pakket ind i et farverigt hero-univers med streaming fokus og tydelig personlig branding.
+              Morten Winther skaber indhold, der kombinerer personligt brand med stærke samarbejder, engagerende
+              storytelling og en tydelig tilstedeværelse på YouTube og Twitch for virksomheder og publikum.
             </p>
 
             <div className={styles.ctaRow}>
@@ -261,17 +256,6 @@ export default async function Home() {
           </div>
 
           <div className={styles.heroVisual}>
-            <div className={styles.bannerFrame}>
-              <Image
-                src="/banner.png"
-                alt="Pokémon inspireret banner"
-                fill
-                priority
-                className={styles.bannerImage}
-                sizes="(max-width: 900px) 100vw, 560px"
-              />
-            </div>
-
             <div className={styles.profileCard}>
               <div className={styles.profileImageWrap}>
                 <Image
@@ -284,7 +268,7 @@ export default async function Home() {
               </div>
               <div className={styles.profileMeta}>
                 <p className={styles.profileName}>Morten Winther</p>
-                <p className={styles.profileText}>TCG collector. Pokémon GO creator. Live på Twitch.</p>
+                <p className={styles.profileText}>Content creator. YouTube & Twitch. Brand storytelling.</p>
               </div>
             </div>
           </div>
@@ -293,7 +277,7 @@ export default async function Home() {
         <section className={styles.highlightsSection}>
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Content focus</p>
-            <h2>Alt samlet i et setup der føles som et samlerbord med energi.</h2>
+            <h2>Et creator-univers bygget til værdiskabende indhold og engagerede samarbejder.</h2>
           </div>
 
           <div className={styles.highlightGrid}>
@@ -309,7 +293,7 @@ export default async function Home() {
         <section className={styles.routesSection}>
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Undersider</p>
-            <h2>De vigtigste sider samlet ét sted for både brugere og søgemaskiner.</h2>
+            <h2>De vigtigste sider samlet ét sted til brands, samarbejdspartnere og nye følgere.</h2>
           </div>
 
           <div className={styles.routeGrid}>
@@ -333,8 +317,8 @@ export default async function Home() {
 
           <div className={styles.youtubeMeta}>
             <p>
-              Daily vlogs, TCG, Pokémon content, tech, fitness og mere. Siden henter de nyeste videoer direkte fra
-              min kanal, så indholdet skifter, når der uploades nyt.
+              Videoer, creator-storytelling, livestreams og platformens vigtigste indhold. Siden henter de nyeste
+              videoer direkte fra kanalen, så den altid viser det mest aktuelle materiale.
             </p>
             <a className={styles.inlineLink} href="https://www.youtube.com/@mortenrwinther" target="_blank" rel="noreferrer">
               Besøg YouTube-kanalen
@@ -389,8 +373,8 @@ export default async function Home() {
           <div className={styles.streamLayout}>
             <div className={styles.streamCopy}>
               <p>
-                Her kan du besøge min kanal, du kan hoppe fra landingpage til stream med ét klik.
-                Perfekt til live openings, Pokémon GO sessions og samlerchats.
+                Her kan du hoppe direkte fra landingpage til live streaming, hvor content, community og real-time
+                engagement mødes i én og samme kanal.
               </p>
 
               <a

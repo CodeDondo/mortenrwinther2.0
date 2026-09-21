@@ -8,10 +8,10 @@ import styles from "./SiteNav.module.css";
 
 const navItems = [
   { label: "Forside", href: "/" },
-  { label: "Northway GO", href: "/northway-go" },
-  { label: "Mediepakker", href: "/mediepakker" },
+  { label: "MRW Agency", href: "/mrw-agency" },
   { label: "Setup", href: "/setup" },
   { label: "Vods", href: "/vods" },
+  { label: "CV", href: "/cv" },
   { label: "Om mig", href: "/om-mig" },
   { label: "Kontakt", href: "/kontakt" },
 ];
@@ -25,11 +25,11 @@ export default function SiteNav() {
       <div className={styles.inner}>
         <Link className={styles.brand} href="/" aria-label="Gå til forsiden">
           <span className={styles.brandMark} aria-hidden="true">
-            <Image src="/logo.png" alt="" fill sizes="42px" className={styles.brandLogo} priority />
+            <Image src="/MRWLogo.png" alt="" fill sizes="42px" className={styles.brandLogo} priority />
           </span>
           <span className={styles.brandCopy}>
             <strong>Morten Winther</strong>
-            <span>TCG, Pokémon GO, YouTube & Twitch</span>
+            <span>Content creator • YouTube • Twitch</span>
           </span>
         </Link>
 

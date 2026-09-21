@@ -1,79 +1,32 @@
-import fs from "fs";
-import path from "path";
-
 export async function GET() {
   const base = process.env.NEXT_PUBLIC_SITE_URL || "https://www.mortenrwinther.dk";
+  const today = new Date().toISOString().split("T")[0];
 
-  const appDir = path.join(process.cwd(), "src", "app");
+  const pages = [
+    { loc: `${base}/`, lastmod: today, changefreq: "weekly", priority: "0.8" },
+    { loc: `${base}/mrw-agency`, lastmod: today, changefreq: "monthly", priority: "0.7" },
+    { loc: `${base}/setup`, lastmod: today, changefreq: "monthly", priority: "0.6" },
+    { loc: `${base}/vods`, lastmod: today, changefreq: "weekly", priority: "0.7" },
+    { loc: `${base}/cv`, lastmod: today, changefreq: "monthly", priority: "0.6" },
+    { loc: `${base}/om-mig`, lastmod: today, changefreq: "monthly", priority: "0.6" },
+    { loc: `${base}/kontakt`, lastmod: today, changefreq: "monthly", priority: "0.6" },
+    { loc: `${base}/cookie-policy`, lastmod: today, changefreq: "yearly", priority: "0.3" },
+    { loc: `${base}/privacy-policy`, lastmod: today, changefreq: "yearly", priority: "0.3" },
+  ];
 
-  async function collectPages(dir, rel = "") {
-    const entries = await fs.promises.readdir(dir, { withFileTypes: true });
-    const pages = [];
-
-    const pageFile = entries.find(
-      (entry) => entry.isFile() && /^page\.(js|jsx|ts|tsx)$/.test(entry.name)
-    );
-
-    const isPublicRoute =
-      pageFile &&
-      !/[\[\]]/.test(rel) &&
-      !rel.split("/").some((segment) => segment.startsWith("("));
-
-    if (isPublicRoute) {
-      const route = rel ? `/${rel}` : "/";
-      const pagePath = path.join(dir, pageFile.name);
-      const pageStats = await fs.promises.stat(pagePath);
-
-      pages.push({
-        loc: `${base}${route}`,
-        lastmod: pageStats.mtime.toISOString().split("T")[0],
-        changefreq: route === "/" || route === "/vods" ? "weekly" : "monthly",
-        priority: route === "/" ? "0.8" : "0.6",
-      });
-    }
-
-    for (const e of entries) {
-      if (e.isDirectory()) {
-        const name = e.name;
-        if (name.startsWith("(") || name.startsWith("_") || name === "api") continue;
-        const subdir = path.join(dir, name);
-        const subrel = rel ? `${rel}/${name}` : name;
-        pages.push(...(await collectPages(subdir, subrel)));
-      }
-    }
-
-    return pages;
-  }
-
-  let pages = [];
-  try {
-    pages = await collectPages(appDir);
-  } catch (err) {
-    // fallback to root-only if something fails
-    pages = [
-      {
-        loc: `${base}/`,
-        lastmod: new Date().toISOString().split("T")[0],
-        changefreq: "weekly",
-        priority: "0.8",
-      },
-    ];
-  }
-
-  // dedupe and sort
-  pages = Array.from(new Map(pages.map((page) => [page.loc, page])).values()).sort((a, b) =>
-    a.loc.localeCompare(b.loc)
-  );
-
-  function urlEntry(loc, lastmod, changefreq = "monthly", priority = "0.5") {
-    return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
-  }
-
-  const internalEntries = pages
-    .map((page) => urlEntry(page.loc, page.lastmod, page.changefreq, page.priority))
-    .join("\n");
-
-  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${internalEntries}\n</urlset>`;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages
+  .map(
+    (page) => `  <url>
+    <loc>${page.loc}</loc>
+    <lastmod>${page.lastmod}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`
+  )
+  .join("\n")}
+</urlset>`;
 
   return new Response(xml, {
     status: 200,

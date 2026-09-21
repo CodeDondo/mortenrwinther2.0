@@ -8,16 +8,6 @@ const footerLinks = [
     href: "/",
   },
   {
-    label: "Northway GO",
-    value: "Pokémon GO gruppe i Aalborg",
-    href: "/northway-go",
-  },
-  {
-    label: "Mediepakker",
-    value: "Samarbejder og sponsorater",
-    href: "/mediepakker",
-  },
-  {
     label: "Om mig",
     value: "Morten Winther",
     href: "/om-mig",
@@ -31,11 +21,6 @@ const footerLinks = [
     label: "Privatliv",
     value: "Privatlivspolitik",
     href: "/privacy-policy",
-  },
-  {
-    label: "Handelsbetingelser",
-    value: "Køb, betaling og fortrydelse",
-    href: "/handelsbetingelser",
   },
   {
     label: "Email",
@@ -54,15 +39,15 @@ const footerLinks = [
   },
   {
     label: "Instagram",
-    value: "@mrwpulls",
-    href: "https://www.instagram.com/mrwpulls/",
+    value: "@tcgtradeshop",
+    href: "https://www.instagram.com/tcgtradeshop/",
   },
 ];
 
 const footerPillars = [
-  "TCG collector content",
-  "Pokémon GO & live adventures",
-  "Daily vlogs, tech, fitness og creator collabs",
+  "Video strategy",
+  "Brand storytelling",
+  "Live community building",
 ];
 
 export default function SiteFooter() {
@@ -72,16 +57,15 @@ export default function SiteFooter() {
         <div className={styles.topRow}>
           <div className={styles.brandBlock}>
             <div className={styles.logoWrap}>
-              <Image src="/logo.png" alt="Morten Winther logo" fill sizes="72px" className={styles.logo} />
+              <Image src="/MRWLogo.png" alt="Morten Winther logo" fill sizes="72px" className={styles.logo} />
             </div>
 
             <div className={styles.brandCopy}>
-              <p className={styles.kicker}>Samarbejde & community</p>
-              <h2>Byg noget stærkt omkring content, collectors og live community.</h2>
+              <p className={styles.kicker}>Samarbejde & content</p>
+              <h2>Byg noget stærkt omkring video, storytelling og live engagement.</h2>
               <p>
-                Denne side er lavet til at samle din tilstedeværelse på tværs af YouTube, Twitch, Discord og de
-                kommende sider på mortenrwinther.dk. Hvis du vil samarbejde om sponsorater, produkter, events eller
-                creator-content, så er du velkommen til at skrive.
+                Denne side samler min tilstedeværelse på tværs af YouTube, Twitch, community og samarbejdsmuligheder for
+                brands, der vil være i kontakt med en engageret og målrettet publikum.
               </p>
               <div className={styles.pillRow}>
                 {footerPillars.map((pillar) => (
@@ -99,10 +83,10 @@ export default function SiteFooter() {
               kontakt@mortenrwinther.dk
             </a>
             <p className={styles.cardText}>
-              Perfekt til samarbejder inden for TCG, gaming, Pokémon, tech, fitness og content der rammer en engageret
-              community på tværs af YouTube, Twitch og Instagram.
+              Perfekt til samarbejder inden for content strategy, creator partnerships, branded storytelling og
+              live video-aktiveringer på YouTube, Twitch og sociale medier.
             </p>
-            <p className={styles.cardText}>CVR 44231662 · Handelsbetingelser og øvrige oplysninger findes i footerens links.</p>
+            <p className={styles.cardText}>CVR 44231662 · Øvrige oplysninger findes i footerens links.</p>
             <p className={styles.cardLabel}>Undersider</p>
             <div className={styles.linkRow}>
               {footerLinks.map((link) => (
@@ -122,8 +106,8 @@ export default function SiteFooter() {
             <p className={styles.cardLabel}>Discord community</p>
             <h3>Hop ind i serveren</h3>
             <p className={styles.cardText}>
-              Et godt sted til community-snak, pulls, raiddage, livestreams og alt det, der samler folk omkring din
-              verden.
+              Et godt sted til community-snak, samarbejder, livestreams og relevante samtaler omkring creator-content
+              og brand engagement.
             </p>
             <div className={styles.discordFrame}>
               <iframe
@@ -148,7 +132,7 @@ export default function SiteFooter() {
 
         <div className={styles.bottomRow}>
           <p>mortenrwinther.dk · CVR 44231662</p>
-          <p>Pokémon-inspireret creator platform med fokus på samlerkultur, community og live content.</p>
+          <p>Professionel creator platform med fokus på video, branding og live community.</p>
         </div>
       </div>
     </footer>

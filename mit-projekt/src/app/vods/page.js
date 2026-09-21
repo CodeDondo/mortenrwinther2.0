@@ -5,10 +5,10 @@ export default function VodsPage() {
     <SectionPage
       eyebrow="Vods"
       title="Clips, uploads og highlights fra kanalen."
-      description="Et hjem for videoer med daily vlogs, TCG, Pokémon content, tech og fitness, samlet så nye seere hurtigt forstår bredden i dit univers."
+      description="Et hjem for videoer, livestream-highlights og indhold, der viser min tilgang til storytelling, community og branded content."
       points={[
         "Highlights fra livestreams og videoer, der er værd at se igen.",
-        "Content der blander collector energi med personlig creator-stil.",
+        "Indhold der kombinerer personlig stil med professionel brand-tilstedeværelse.",
         "Nye uploads kan sættes frem her, når du udvider sitet senere.",
       ]}
       ctaLabel="Se på YouTube"
@@ -20,7 +20,7 @@ export default function VodsPage() {
 export const metadata = {
   title: "Vods | Morten Winther",
   description:
-    "Find videoer, highlights og uploads fra Morten Winther med TCG, Pokémon content, tech, fitness og live moments.",
+    "Find videoer, highlights og uploads fra Morten Winther med creator-content, live moments og branded storytelling.",
   alternates: {
     canonical: "/vods",
   },

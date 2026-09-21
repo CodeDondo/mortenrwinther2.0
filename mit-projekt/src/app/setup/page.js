@@ -29,13 +29,13 @@ const specs = [
       "Streaming software: OBS Studio, Larix Screencaster (mobil)",
       "Stream Deck: Elgato Stream Deck +",
       "Kamera: Dji Osmo Action 6",
-      "Mobil: Samsung Galaxy S25 FE",
+      "Mobil: Samsung Galaxy Z Fold 8",
     ],
   },
   {
-    label: "Consoles",
-    title: "Til gaming og indhold",
-    items: ["Xbox Series X", "Pokémon-venligt setup til både streaming og casual gaming."],
+    label: "Workflows",
+    title: "Til produktion og indhold",
+    items: ["Konsistent postproduktion for video", "Effektiv opsætning til streaming, editing og samarbejder."],
   },
 ];
 
@@ -45,9 +45,9 @@ export default function SetupPage() {
       <section className={styles.hero}>
         <div className={styles.copy}>
           <p className={styles.eyebrow}>MIT SETUP {setupYear}</p>
-          <h1>Mit daglige workflow og gaming-setup.</h1>
+          <h1>Mit daglige workflow og professional content setup.</h1>
           <p className={styles.lead}>
-            Et samlet overblik over mit setup til udvikling, streaming og content creation — holdt i samme rene og
+            Et samlet overblik over mit setup til produktion, streaming og content creation — holdt i samme rene og
             professionelle stil som resten af sitet.
           </p>
 
@@ -58,7 +58,7 @@ export default function SetupPage() {
             </div>
             <div className={styles.metaCard}>
               <span>Fokus</span>
-              <strong>Content, TCG og streaming</strong>
+              <strong>Content, video og streaming</strong>
             </div>
             <div className={styles.metaCard}>
               <span>Stil</span>

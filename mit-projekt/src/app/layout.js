@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Morten Winther | TCG, Pokémon GO, YouTube & Twitch",
-  description: "Pokémon-inspireret landingpage for Morten Winther med fokus på TCG collector content, Pokémon GO, YouTube uploads og Twitch livestreams.",
+  title: "Morten Winther | Content Creator, YouTube & Twitch",
+  description: "Professionel landingpage for Morten Winther med fokus på content creation, creator-branding, YouTube-indhold og Twitch livestreams.",
   alternates: {
     canonical: "/",
   },
@@ -49,7 +49,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Morten Winther",
   url: siteUrl,
-  logo: `${siteUrl}/logo.png`,
+  logo: `${siteUrl}/MRWLogo.png`,
   sameAs: [
     "https://www.youtube.com/@mortenrwinther",
     "https://www.twitch.tv/mortenrwinther",
