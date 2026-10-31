@@ -6,6 +6,7 @@ import AutoRefresh from "./auto-refresh";
 const youtubeChannelUrl = "https://www.youtube.com/@mortenrwinther/videos";
 const youtubeWatchBaseUrl = "https://www.youtube.com/watch?v=";
 const youtubeThumbnailBaseUrl = "https://i.ytimg.com/vi";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.mortenrwinther.dk";
 
 const highlights = [
   {
@@ -54,7 +55,7 @@ const pageSchema = {
     "@type": "ListItem",
     position: index + 1,
     name: page.title,
-    url: `https://www.mortenrwinther.dk${page.href}`,
+    url: new URL(page.href, siteUrl).toString(),
   })),
 };
 
@@ -179,8 +180,6 @@ async function fetchLatestYouTubeVideos() {
 }
 
 function getTwitchParentHosts() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mortenrwinther.dk";
-
   try {
     const hostname = new URL(siteUrl).hostname;
     const hosts = new Set([
@@ -229,11 +228,11 @@ export default async function Home() {
               </div>
             </div>
 
-            <h1 className={styles.title}>Professionel content creation med fokus på video, brand og community.</h1>
+            <h1 className={styles.title}>Morten Winther – content creator på YouTube og Twitch</h1>
 
             <p className={styles.lead}>
-              Morten Winther skaber indhold, der kombinerer personligt brand med stærke samarbejder, engagerende
-              storytelling og en tydelig tilstedeværelse på YouTube og Twitch for virksomheder og publikum.
+              Jeg laver YouTube-videoer og livestreams på Twitch med fokus på storytelling, fællesskab og
+              brandsamarbejder. Med base i Nørresundby deler jeg mit indhold med seere og samarbejdspartnere online.
             </p>
 
             <div className={styles.ctaRow}>
@@ -405,3 +404,34 @@ export default async function Home() {
     </div>
   );
 }
+
+export const metadata = {
+  title: "Morten Winther | Content Creator på YouTube & Twitch",
+  description:
+    "Morten Winther er content creator og streamer på YouTube og Twitch. Se videoer og livestreams, læs om mit setup, og kontakt mig om samarbejder og branded content.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: "Morten Winther | Content Creator på YouTube & Twitch",
+    description:
+      "Se Morten Winthers YouTube-videoer og Twitch-livestreams, læs om hans setup, og tag kontakt om brandsamarbejder.",
+    images: [
+      {
+        url: "/banner.png",
+        width: 1672,
+        height: 941,
+        alt: "Morten Winther, content creator på YouTube og Twitch",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Morten Winther | Content Creator på YouTube & Twitch",
+    description:
+      "Se Morten Winthers YouTube-videoer og Twitch-livestreams, læs om hans setup, og tag kontakt om brandsamarbejder.",
+    images: ["/banner.png"],
+  },
+};

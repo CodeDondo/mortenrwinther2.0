@@ -10,6 +10,7 @@ const navItems = [
   { label: "Forside", href: "/" },
   { label: "MRW Agency", href: "/mrw-agency" },
   { label: "Setup", href: "/setup" },
+  { label: "Content Crew", href: "/content-crew" },
   { label: "Vods", href: "/vods" },
   { label: "CV", href: "/cv" },
   { label: "Om mig", href: "/om-mig" },

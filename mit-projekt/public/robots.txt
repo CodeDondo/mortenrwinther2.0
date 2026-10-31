@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /_next/
 Disallow: /api/
 
 Sitemap: https://www.mortenrwinther.dk/sitemap.xml
-Host: www.mortenrwinther.dk
